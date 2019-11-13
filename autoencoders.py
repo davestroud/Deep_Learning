@@ -16,4 +16,15 @@ import matplotlib.pyplot as plt
 image_size = x_train.shape[1]
 x_train = np.reshape(x_train, [-1, image_size, image_size, 1])
 x_test = np.reshape(x_test, [1, image_size, image_size, 1])
+x_train = x_train.astype('float32') / 255
+x_test = x_test.astype('float32') / 255
+
+# network parameters
+input_shape = (image_size, image_size, 1)
+batch_size = 32
+kernel_size = 3
+latent_dim = 16
+# encoder/decoder number of filters per CNN layer
+layer_filters = [32, 64]
+
 
