@@ -39,10 +39,10 @@ for filters in layer_filters:
             strides=2,
             padding='same')(x)
 
-#shpae infor need eo buoldl decoder model
-# soc we don't do hand computation
-# the input ot the decoder's first Conv2DTranspose
+#shape info 
+# so we don't do hand computation
+# the input to the decoder's first Conv2DTranspose
 # will have this shape
 # shape is (7, 7, 64) which is processed by
-# the decore back to (23, 28, 1)
-
+# the decoder is back to (23, 28, 1)
+shape = K.int_shape(x)
