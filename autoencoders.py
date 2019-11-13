@@ -46,3 +46,8 @@ for filters in layer_filters:
 # shape is (7, 7, 64) which is processed by
 # the decoder is back to (23, 28, 1)
 shape = K.int_shape(x)
+
+# generate latent vector
+x = Flatten()(x)
+latent = Dense(latent_dim, name='latent_vector')(x)
+
