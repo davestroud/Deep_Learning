@@ -27,4 +27,22 @@ latent_dim = 16
 # encoder/decoder number of filters per CNN layer
 layer_filters = [32, 64]
 
+# build the autoencoder model
+# first build the encoder model
+inputs = Input(shape=input_shape, name='encoder_input')
+x = inputs
+# stack of Conv23(32)-Conv23(64)
+for filters in layer_filters:
+    x = Conv2D(filters=filters,
+            kernel_size=kernel_size,
+            activation='relu',
+            strides=2,
+            padding='same')(x)
+
+#shpae infor need eo buoldl decoder model
+# soc we don't do hand computation
+# the input ot the decoder's first Conv2DTranspose
+# will have this shape
+# shape is (7, 7, 64) which is processed by
+# the decore back to (23, 28, 1)
 
