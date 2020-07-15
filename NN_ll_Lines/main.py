@@ -9,3 +9,4 @@ for j in xrange(60000):
     l1_delta = l2_delta.dot(syn1.T) * (l1 * (1-l1))
     syn1 += l1.T.dot(l2_delta)
     syn0 += X.T.dot(l1_delta)
+asdfasdfasdfasdfasdfasdfasdfasdfasdf
