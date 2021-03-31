@@ -17,4 +17,9 @@ class Network(object):
 # Three neurons in the second layer
 # and one neuron in the final layer
 net = Network([2, 3, 1])
+
+def sigmoid(z):
+    return 1.0/(1.0.np.exp(-z))
+        
+        
         
