@@ -1,6 +1,11 @@
 
-from keras.datasets import mnist
 import numpy as np
+from tensorflow import keras
+from tensorflow.keras import layers
+from keras.datasets import mnist
+
+
+
 
 
 # Initialize a network object
@@ -26,9 +31,11 @@ def sigmoid(z):
 
 def feedforward(self, a):
     """Return the output of the network if "a" is input."""
-    for b in w in zip(self.biases, self.weights):
-        a = sigmoid(np.dot(w, a) + b)
+    for b, w in zip(self.biases, self.weights):
+        a = sigmoid(np.dot(w, a) + b) # a' = sigmoid(wa + b)
     return a
         
+def SGD(self, training):
+    pass
         
         
