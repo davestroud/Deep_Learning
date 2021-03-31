@@ -18,8 +18,10 @@ class Network(object):
 # and one neuron in the final layer
 net = Network([2, 3, 1])
 
+# Converts a real value in to one that can be interpreted 
+# as a probability
 def sigmoid(z):
-    return 1.0/(1.0.np.exp(-z))
+    return 1.0/(1.0+ np.exp(-z))
         
         
         
