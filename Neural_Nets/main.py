@@ -13,3 +13,8 @@ class Network(object):
         self.weights = [np.random.randn(y, x)
                         for x, y in zip(sizes[:-1], sizes[1:])]
         
+# Create a network with 2 neurons in the first layer
+# Three neurons in the second layer
+# and one neuron in the final layer
+net = Network([2, 3, 1])
+        
