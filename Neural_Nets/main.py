@@ -5,8 +5,9 @@ from tensorflow.keras import layers
 from keras.datasets import mnist
 
 
+
 # the data, split between train and test sets
-# (training_data, testing_data)
+(x_train, y_train), (x_test, y_test) = keras.datasets.mnist.load_data()
 
 
 # Initialize a network object
@@ -25,7 +26,7 @@ class Network(object):
 # and one neuron in the final layer
 net = Network([2, 3, 1])
 
-# Converts a real value in to one that can be interpreted 
+# Converts a real value into one that can be interpreted 
 # as a probability
 def sigmoid(z):
     return 1.0/(1.0+ np.exp(-z))
@@ -46,6 +47,8 @@ def SGD(self, training_data, epochs, mini_batch_size, eta,
     against the test data after each epoch, and partial progress
     printed out. This is useful for tracking progress, but slows
     things down substantially."""
+    if test_data: n_test = len(test_data)
+    n = len(training_data)
     
         
         
